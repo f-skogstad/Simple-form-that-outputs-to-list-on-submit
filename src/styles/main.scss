@@ -1,0 +1,30 @@
+@import 'config';
+@import 'Form';
+@import 'List';
+@import 'List-item';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.App {
+  margin-top: 400px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+button {
+  border: 0;
+}
+
+ul {
+  list-style-type: none;
+}

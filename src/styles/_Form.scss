@@ -1,0 +1,29 @@
+.Form-component {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px 50px;
+  border-radius: 10px;
+
+  * {
+    margin: 10px 0;
+  }
+
+  label {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  button {
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: purple;
+    border-radius: 5px;
+  }
+}
