@@ -1,3 +1,45 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  min-height: 200px;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card * {
+  margin: 10px 20px;
+}
+
+.card label {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.card input {
+  padding: 5px;
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+.card h1 {
+  margin: 0;
+  padding: 30px 50px;
+  background-color: purple;
+  border-radius: 10px 10px 0 0;
+}
+
+.card p {
+  font-size: 24px;
+  margin: 30px 20px;
+}
+
+.card li {
+  font-size: 24px;
+  padding: 5px 0;
+}
+
 .Form-component {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6,79 +48,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
-  padding: 20px 50px;
-  border-radius: 10px;
 }
 
-.Form-component * {
-  margin: 10px 0;
-}
-
-.Form-component label {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.Form-component input {
-  padding: 5px;
-  font-size: 18px;
-}
-
-.Form-component button {
+.button {
   width: 100px;
   height: 30px;
-  color: white;
-  background-color: purple;
-  border-radius: 5px;
-}
-
-.List-component {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: white;
-  padding: 20px 50px;
-  border-radius: 10px;
-}
-
-.List-item-component {
-  font-size: 24px;
-}
-
-.Modal-component {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.Modal-component h1 {
-  margin: 0;
-  padding: 30px 50px;
-  background-color: purple;
-  border-radius: 10px 10px 0 0;
-}
-
-.Modal-component p {
-  font-size: 24px;
-  margin: 30px 50px;
-}
-
-.Modal-component button {
-  width: 100px;
-  height: 30px;
-  margin: 30px 50px;
   color: white;
   background-color: purple;
   border-radius: 5px;
@@ -107,7 +81,7 @@ button {
   border: 0;
 }
 
-ul {
+li {
   list-style-type: none;
 }
 /*# sourceMappingURL=main.css.map */

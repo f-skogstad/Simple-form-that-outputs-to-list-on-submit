@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from './UI/Card';
+import Button from './UI/Button';
 
 function Form(props) {
   const usernameChangeHandler = (e) => {
@@ -38,21 +40,23 @@ function Form(props) {
   };
 
   return (
-    <form className='Form-component' onSubmit={submitHandler}>
-      <label>Username</label>
-      <input
-        type='text'
-        value={props.enteredUsername}
-        onChange={usernameChangeHandler}
-      />
-      <label>Age (years)</label>
-      <input
-        type='number'
-        value={props.enteredAge}
-        onChange={ageChangeHandler}
-      />
-      <button type='submit'>Add User</button>
-    </form>
+    <Card>
+      <form className='Form-component' onSubmit={submitHandler}>
+        <label>Username</label>
+        <input
+          type='text'
+          value={props.enteredUsername}
+          onChange={usernameChangeHandler}
+        />
+        <label>Age (years)</label>
+        <input
+          type='number'
+          value={props.enteredAge}
+          onChange={ageChangeHandler}
+        />
+        <Button type='submit'>Add User</Button>
+      </form>
+    </Card>
   );
 }
 

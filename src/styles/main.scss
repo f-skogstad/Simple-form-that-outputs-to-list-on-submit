@@ -1,8 +1,5 @@
-@import 'config';
-@import 'Form';
-@import 'List';
-@import 'List-item';
-@import 'Modal';
+@import 'card';
+@import 'button';
 
 * {
   box-sizing: border-box;
@@ -26,6 +23,6 @@ button {
   border: 0;
 }
 
-ul {
+li {
   list-style-type: none;
 }
