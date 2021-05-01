@@ -1,31 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Form(props) {
-  const [enteredUsername, setEnteredUsername] = useState('');
-  const [enteredAge, setEnteredAge] = useState('');
-
   const usernameChangeHandler = (e) => {
-    setEnteredUsername(e.target.value);
+    props.setEnteredUsername(e.target.value);
   };
 
   const ageChangeHandler = (e) => {
-    setEnteredAge(e.target.value);
+    props.setEnteredAge(e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const user = {
-      username: enteredUsername,
-      age: enteredAge,
-    };
+    if (props.enteredUsername === '' && !props.enteredAge > 0) {
+      props.setIsValid(false);
+      props.setErrorMessage('Please enter a valid age & username');
+    } else if (props.enteredUsername === '') {
+      props.setIsValid(false);
+      props.setErrorMessage('Please enter a username');
+    } else if (!props.enteredAge > 0) {
+      props.setIsValid(false);
+      props.setErrorMessage('Please enter a valid age (> 0)');
+    } else {
+      props.setIsValid(true);
+      const user = {
+        username: props.enteredUsername,
+        age: props.enteredAge,
+      };
 
-    props.setUsers((prevUsers) => {
-      return [user, ...prevUsers];
-    });
+      props.setUsers((prevUsers) => {
+        return [user, ...prevUsers];
+      });
 
-    setEnteredUsername('');
-    setEnteredAge('');
+      props.setEnteredUsername('');
+      props.setEnteredAge('');
+    }
   };
 
   return (
@@ -33,15 +42,13 @@ function Form(props) {
       <label>Username</label>
       <input
         type='text'
-        value={enteredUsername}
+        value={props.enteredUsername}
         onChange={usernameChangeHandler}
       />
       <label>Age (years)</label>
       <input
         type='number'
-        min='1'
-        max='100'
-        value={enteredAge}
+        value={props.enteredAge}
         onChange={ageChangeHandler}
       />
       <button type='submit'>Add User</button>

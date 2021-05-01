@@ -1,0 +1,28 @@
+.Modal-component {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+
+  h1 {
+    margin: 0;
+    padding: 30px 50px;
+    background-color: purple;
+    border-radius: 10px 10px 0 0;
+  }
+
+  p {
+    font-size: 24px;
+    margin: 30px 50px;
+  }
+
+  button {
+    width: 100px;
+    height: 30px;
+    margin: 30px 50px;
+    color: white;
+    background-color: purple;
+    border-radius: 5px;
+  }
+}
