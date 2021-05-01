@@ -5,8 +5,16 @@
   min-height: 200px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 
-  * {
-    margin: 10px 20px;
+  form {
+    * {
+      margin: 10px 20px;
+    }
+  }
+
+  div {
+    * {
+      margin: 10px 20px;
+    }
   }
 
   label {
@@ -21,21 +29,32 @@
     padding: 5px 0;
   }
 
-  h1 {
+  header {
     margin: 0;
-    padding: 30px 50px;
+    padding: 30px 20px;
     background-color: purple;
     border-radius: 10px 10px 0 0;
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
   }
 
   p {
     font-size: 24px;
-    margin: 30px 20px;
+  }
+
+  ul {
+    padding: 10px 20px;
   }
 
   li {
     font-size: 24px;
-    padding: 5px 0;
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 10px;
   }
 }
 

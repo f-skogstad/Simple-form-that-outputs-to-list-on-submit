@@ -5,12 +5,14 @@ import Button from './UI/Button';
 function Modal(props) {
   return (
     <Card>
-      <h1>Invalid Input</h1>
+      <header>
+        <h1>Invalid Input</h1>
+      </header>
       <div>
         <p>{props.errorMessage}</p>
         <Button
           onClick={() => {
-            props.setIsValid(true);
+            props.setErrorMessage(null);
           }}
         >
           Okey

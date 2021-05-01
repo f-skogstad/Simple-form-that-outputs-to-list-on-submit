@@ -7,7 +7,11 @@
           box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 }
 
-.card * {
+.card form * {
+  margin: 10px 20px;
+}
+
+.card div * {
   margin: 10px 20px;
 }
 
@@ -23,21 +27,32 @@
   padding: 5px 0;
 }
 
-.card h1 {
+.card header {
   margin: 0;
-  padding: 30px 50px;
+  padding: 30px 20px;
   background-color: purple;
   border-radius: 10px 10px 0 0;
 }
 
+.card header h1,
+.card header h2,
+.card header h3 {
+  margin: 0;
+}
+
 .card p {
   font-size: 24px;
-  margin: 30px 20px;
+}
+
+.card ul {
+  padding: 10px 20px;
 }
 
 .card li {
   font-size: 24px;
-  padding: 5px 0;
+  padding: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
 }
 
 .Form-component {

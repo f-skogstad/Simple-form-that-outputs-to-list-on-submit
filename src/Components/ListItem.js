@@ -2,9 +2,9 @@ import React from 'react';
 
 function ListItem(props) {
   return (
-    <p className='List-item-component'>
+    <li className='List-item-component'>
       {props.username} (Age: {props.age})
-    </p>
+    </li>
   );
 }
 

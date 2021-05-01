@@ -1,57 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './UI/Card';
 import Button from './UI/Button';
 
 function Form(props) {
+  const [enteredUsername, setEnteredUsername] = useState('');
+  const [enteredAge, setEnteredAge] = useState('');
+
   const usernameChangeHandler = (e) => {
-    props.setEnteredUsername(e.target.value);
+    setEnteredUsername(e.target.value);
   };
 
   const ageChangeHandler = (e) => {
-    props.setEnteredAge(e.target.value);
+    setEnteredAge(e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (props.enteredUsername === '' && !props.enteredAge > 0) {
-      props.setIsValid(false);
+    if (enteredUsername.trim() === '' && +enteredAge <= 0) {
       props.setErrorMessage('Please enter a valid age & username');
-    } else if (props.enteredUsername === '') {
-      props.setIsValid(false);
+    } else if (enteredUsername.trim() === '') {
       props.setErrorMessage('Please enter a username');
-    } else if (!props.enteredAge > 0) {
-      props.setIsValid(false);
+    } else if (+enteredAge <= 0) {
       props.setErrorMessage('Please enter a valid age (> 0)');
     } else {
-      props.setIsValid(true);
+      props.setErrorMessage('');
       const user = {
-        username: props.enteredUsername,
-        age: props.enteredAge,
+        username: enteredUsername,
+        age: enteredAge,
       };
 
       props.setUsers((prevUsers) => {
         return [user, ...prevUsers];
       });
 
-      props.setEnteredUsername('');
-      props.setEnteredAge('');
+      setEnteredUsername('');
+      setEnteredAge('');
     }
   };
 
   return (
     <Card>
       <form className='Form-component' onSubmit={submitHandler}>
-        <label>Username</label>
+        <label htmlFor='username'>Username</label>
         <input
+          id='username'
           type='text'
-          value={props.enteredUsername}
+          value={enteredUsername}
           onChange={usernameChangeHandler}
         />
-        <label>Age (years)</label>
+        <label htmlFor='age'>Age (years)</label>
         <input
+          id='age'
           type='number'
-          value={props.enteredAge}
+          min='1'
+          value={enteredAge}
           onChange={ageChangeHandler}
         />
         <Button type='submit'>Add User</Button>

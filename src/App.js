@@ -5,25 +5,13 @@ import Modal from './Components/Modal';
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [enteredUsername, setEnteredUsername] = useState('');
-  const [enteredAge, setEnteredAge] = useState('');
-  const [isValid, setIsValid] = useState(true);
-  const [errorMessage, setErrorMessage] = useState('Error');
+  const [errorMessage, setErrorMessage] = useState('');
 
   return (
     <div className='App'>
-      <Form
-        setUsers={setUsers}
-        enteredUsername={enteredUsername}
-        setEnteredUsername={setEnteredUsername}
-        enteredAge={enteredAge}
-        setEnteredAge={setEnteredAge}
-        isValid={isValid}
-        setIsValid={setIsValid}
-        setErrorMessage={setErrorMessage}
-      />
-      {!isValid ? (
-        <Modal errorMessage={errorMessage} setIsValid={setIsValid} />
+      <Form setUsers={setUsers} setErrorMessage={setErrorMessage} />
+      {errorMessage ? (
+        <Modal errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
       ) : (
         <List users={users} />
       )}

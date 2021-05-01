@@ -5,11 +5,11 @@ import Card from './UI/Card';
 function List(props) {
   return (
     <Card>
-      <li>
+      <ul>
         {props.users.map((user, index) => (
           <ListItem username={user.username} age={user.age} key={index} />
         ))}
-      </li>
+      </ul>
     </Card>
   );
 }
